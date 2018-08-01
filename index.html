@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+            <meta charset="UTF-8">
+        <title>Word Guess Game</title>
+    </head>
+
+    <body>
+        <h1>Dark Away</h1>
+
+        <div id="game">
+                <p>Hit any key to begin!</p>
+        </div>
+
+    </body>
+
+    <script type="text/javascript">
+
+    
+    document.onkeyup = function(event) {
+        
+
+        var name = prompt("Hello. What's your name?");
+        alert("Nice to meet you " + name + ", you are now my prisoner.");
+
+        alert("You have 13 guesses to walk free. Good luck.")
+
+       var words = ["void", "oblivion", "tesseract", "blackhole", "limbo", "chasm"];
+
+       var answer = words[Math.floor(Math.random() * words.length)];
+       
+       
+       var answerArray = [];
+       for (var i = 0; i < answer.length; i++) {
+           answerArray[i] = "_";
+       }
+
+       var remainingLetters = answer.length;
+
+       
+       
+       while (remainingLetters > 0) {
+        alert(answerArray.join(" "));
+
+    var guess = prompt("Guess a letter, or click Cancel to spend eternity with me.");
+    if (guess === null) {
+        break;
+    } else if (guess.length !== 1) {
+      alert("You may only choose one letter at a time. Why rush eternity?");
+    } else {
+// Update the game state with the guess
+      for (var j = 0; j < answer.length; j++) {
+        if (answer[j] === guess) {
+ answerArray[j] = guess;
+ remainingLetters--;
+ }
+}
+}
+}
+
+
+
+alert(answerArray.join(" "));
+alert("No! It can't be! The answer was " + answer);
+
+
+}
+       
+       
+       
+       
+       
+       
+       
+       
+       //var answer = ["g", "o", "d", "l", "e", "s", "s"];
+        //var guess;
+
+        //for(i = 0; i < 13; i++) { 
+            //console.log(i + 1)
+           // guess = prompt("Pick a letter");
+            //if(answer === guess) {
+              //  alert("Good guess, but don't get cocky.");
+               // break; 
+           // }
+       // }
+
+  
+    
+    
+    </script>
+
+
+
+
+</html>

@@ -1,95 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
 
-            <meta charset="UTF-8">
-        <title>Word Guess Game</title>
-    </head>
+<head>
 
-    <body>
-        <h1>Dark Away</h1>
-
-        <div id="game">
-                <p>Hit any key to begin!</p>
-        </div>
-
-    </body>
-
-    <script type="text/javascript">
-
+    <meta charset="UTF-8">
+    <title>Word Guess Game</title>
     
-    document.onkeyup = function(event) {
-        
+    <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
 
-        var name = prompt("Hello. What's your name?");
-        alert("Nice to meet you " + name + ", you are now my prisoner.");
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- <link rel="javascript" type="text/javascript" href="assets/javascript/game.js"> -->
 
-        alert("You have 13 guesses to walk free. Good luck.")
+</head>
 
-       var words = ["void", "oblivion", "tesseract", "blackhole", "limbo", "chasm"];
+<body>
+    
+    <h1>I Want Your Bike!</h1>
 
-       var answer = words[Math.floor(Math.random() * words.length)];
-       
-       
-       var answerArray = [];
-       for (var i = 0; i < answer.length; i++) {
-           answerArray[i] = "_";
-       }
+    <div id="game">
+    <p id="begin">Hit any key to begin!</p>
+    </div>
 
-       var remainingLetters = answer.length;
+    <img id="bike" src="assets/images/bike.jpg" alt="bike pic">
 
-       
-       
-       while (remainingLetters > 0) {
-        alert(answerArray.join(" "));
+    <div id="word">
 
-    var guess = prompt("Guess a letter, or click Cancel to spend eternity with me.");
-    if (guess === null) {
-        break;
-    } else if (guess.length !== 1) {
-      alert("You may only choose one letter at a time. Why rush eternity?");
+    </div>
+
+</body>
+
+<script type="text/javascript">
+
+    var words = ["pedal", "pump", "gears", "helmet", "carbon", "trail"];
+    var answer = words[Math.floor(Math.random() * words.length)];
+    var answerArray = [];
+    var wrongGuess = [];
+    for (var i = 0; i < answer.length; i++) {
+            answerArray[i] = "_";
+        }
+    
+    var name = prompt("Hello. What's your name?");
+    var challenge = confirm("Nice to meet you " + name + ". I'll bet you your bike you can't guess my word.");
+    if (challenge) {
+        alert("You have 10 guesses to win my bike, or lose yours. Good luck.");
     } else {
-// Update the game state with the guess
-      for (var j = 0; j < answer.length; j++) {
-        if (answer[j] === guess) {
- answerArray[j] = guess;
- remainingLetters--;
- }
-}
-}
-}
+        alert("See ya later!"); 
+            
+        
+        
+    }
+
+    document.onkeyup = function (event) {
+        // console.log(event)
+        var guess = event.key;
+       
+
+        var remainingLetters = answer.length;
+
+
+        
+        var bet = true 
+
+        if (bet) {
+           
+
+            if (remainingLetters > 0) {
+
+                var goodGuess = false
+
+                    for (var j = 0; j < answer.length; j++) {
+                        console.log("f loop")
+                        console.log(answer[j])
+                        console.log(guess)
+                        if (answer[j] === guess) { 
+                            goodGuess = true
+                            console.log("correctletterguessed")
+                            answerArray[j] = guess;
+                            remainingLetters--;
+                        }
+                    }
+                    console.log(goodGuess)
+                    if(!goodGuess) {
+                        wrongGuess.push(guess)
+                        console.log(wrongGuess)
+                    }
+                    document.getElementById("word").innerHTML = answerArray.join(" ");
+                // }
+            }
 
 
 
-alert(answerArray.join(" "));
-alert("No! It can't be! The answer was " + answer);
+            document.getElementById("word").innerHTML = answerArray.join(" ");
+         
+
+        } document.getElementById("game").textContent = wrongGuess;
 
 
-}
-       
-       
-       
-       
-       
-       
-       
-       
-       //var answer = ["g", "o", "d", "l", "e", "s", "s"];
-        //var guess;
 
-        //for(i = 0; i < 13; i++) { 
-            //console.log(i + 1)
-           // guess = prompt("Pick a letter");
-            //if(answer === guess) {
-              //  alert("Good guess, but don't get cocky.");
-               // break; 
-           // }
-       // }
 
-  
-    
-    
-    </script>
+
+
+
+
+
+    }
+
+
+
+
+     //we have a variable set to false, if we get a correct answer, then we reset that variable to true.
+
+
+
+
+
+</script>
 
 
 

@@ -1,0 +1,40 @@
+#word {
+    /* background-color: #4444; */
+    color: #ddc9c9;
+    border: 3px;
+    width: 40%;
+    text-align: center;
+    margin-left: 430px;
+    font-size: 60px;
+}
+
+#bike {
+    width:630px;
+    height:435px;
+    float: right;
+}
+
+h1 {
+    text-align: center;
+    font-size: 80px;
+    font-family: 'Aldrich';
+    color: #286086;
+}
+
+#begin {
+    font-size: 60px;
+    font-family: 'Aldrich';
+    color: #980431;
+    text-align: center;
+}
+
+body {
+    background-color: #111111;
+}
+
+#game {
+    color: #ddc9c9;
+}
+
+
+

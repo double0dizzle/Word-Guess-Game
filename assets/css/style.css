@@ -1,16 +1,17 @@
 #word {
     /* background-color: #4444; */
-    color: #ddc9c9;
+    color: hsl(101, 56%, 29%);
     border: 3px;
     width: 40%;
     text-align: center;
     margin-left: 430px;
     font-size: 60px;
+    font-family: 'Aldrich';
 }
 
 #bike {
-    width:630px;
-    height:435px;
+    width:600px;
+    height:350px;
     float: right;
 }
 
@@ -28,7 +29,7 @@ h1 {
 
 #pixel2 {
     width: 150px;
-    height: 150;
+    height: 150px;
     float: right;
 }
 
@@ -99,6 +100,11 @@ input[type=submit]:hover {
 
 #guesses {
     color: #ccc;
+}
+
+#g  {
+    color: #ccc;
+    font-size: 28px;
 }
 
 
